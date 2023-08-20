@@ -34,6 +34,7 @@ public class AppTest
     private AndroidDriver driver;
     private final String PORT = "4723";
     private final String HOST = "127.0.0.1";
+    private String deviceName = "pixel_7_pro";
 
 
     @BeforeMethod
@@ -41,10 +42,7 @@ public class AppTest
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android")
                 .setAutomationName("uiautomator2")
-                .setDeviceName("pixel_7_pro")
-                .setAppPackage("com.afwsamples.testdpc")
-                .setAppActivity("com.afwsamples.testdpc.comp.ProfileOwnerService")
-                .autoGrantPermissions()
+                .setDeviceName(deviceName)
                 .setNoReset(true)
                 .setNewCommandTimeout(Duration.ofSeconds(60));
         System.out.println(getUrl(HOST, PORT));
